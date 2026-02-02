@@ -1,2 +1,3 @@
 # Deposito_Veneroso
-Deposito_Veronica_Veneroso
+Veronica Veneroso
+venerosov@gmail.com
