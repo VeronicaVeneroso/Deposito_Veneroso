@@ -1,0 +1,103 @@
+Risposta 3:
+Una collezione è un raggruppamento di elementi e può essere:
+- ordinata o non ordinata
+- omogenea o non omogenea (nel primo caso contiene tutti elementi dello stesso tipo, nel secondo può contenere elementi di tipi diversi)
+- modificabile oppure non modificabile (costante)
+
+I vari tipi di collezioni sono:
+- Liste
+Tipo: list
+Definibili mediante parentesi quadre []
+Ordinate
+Non omogenee
+Modificabili
+
+- Tuple
+Tipo: tuple
+Definibili mediante parentesi tonde ()
+Ordinate
+Non omogenee
+Non modificabili
+
+- Insiemi
+Tipo: set
+Definibili mediante parentesi graffe {}
+Non ordinati
+Possono essere anche non omogenei, ma è preferibile che siano omogenei
+Modificabili
+
+
+Risposta 5:
+Python è:
+- Un linguaggio di programmazione (cioè permette comandi di ripetizione, controllo e struttura)
+- Interpretato (cioè c'è un interprete che traduce il codice scritto dal programmatore e solo se è corretto lo esegue. Questo rende il programma un po' più lento ma permette di eseguire solo se tutto è corretto, quindi è un po' più semplice per chi scrive il codice).
+- OOP (Orientato agli oggetto - Object Oriented Programming) (cioè deve rispettare 3 regole fondamentali: incapsulamento, ereditarietà e polimorfismo. Queste 3 regole si basano su quella fondamentale dell'astrazione che permette di poter usufruire delle stesse. In realtà Python non supporta solo il paradigma dell'OOP ma anche quello imperativo e quello funzionale.
+- Fortemente dinamico (cioè permette alle variabili di poter cambiare tipo ad ogni assegnazione, senza essere necessariamente dichiarate. Ma non è del tutto dinamico perché comunque le variabili devono necessariamente avere un tipo.)
+- Ad alto livello (cioè è un linguaggio più vicino a quello umano che a quello della macchina. Questo lo rende più facile per il programmatore, ma è in realtà più complesso per la macchina che deve tradurre tutto nel suo linguaggio prima di poter eseguire.)
+
+Altra caratteristica unica di Python è l'indentazione, che consente di interpretare il codice dividendolo in blocchi. Questo si gestisce con la distanza dei comandi rispetto al margine sinistro.
+
+
+Risposta 7: Una variabile è un contenitore e si definisce su 3 parti:
+- nome
+- valore (il contenuto)
+- tipo
+esempio: x = 3 (x -> nome, 3 -> valore, int -> tipo)
+
+Le variabili si dividono in basilari e non basilari.
+Le non basilari sono tutte quelle che vengono definite dall'utente.
+Le basilari sono:
+- int (numeri interi)
+- float (numeri decimali)
+- char (caratteri)
+- bool (booleani che rappresentano il linguaggio del computer, possono assumere solo due valori (True/False o 1/0 rispettivamente). Essi possono essere restituiti come valori anche dal computer come risposta a una condizione di un controllore del flusso o a un operatore logico)
+- str (stringhe. Queste ultime sono a cavallo tra basilari e non basilari, perché sono già esistenti nella macchina ma si distinguono dalle basilari per due motivi: hanno dei metodi e sono composte da tanti valori char quanti sono i caratteri che contiene.)
+
+
+Risposta 9: Una funzione è un blocco di codice autonomo che esegue una specifica operazione. Una funzione dimostra implicitamente l'astrazione. Le funzioni sono fondamentali perché sono riutilizzabili in più punti del codice, possono essere richiamate anche da altri codici e sono manutenibili nel senso che se si ha necessità di cambiarle basta farlo nella sezione di codice dove vengono definite e automaticamente cambiano tutti i codici in cui è richiamata.
+Esistono le funzioni con return e quelle senza. Return significa che al termine dell'esecuzione della funzione viene restituito un valore che permette la valorizzazione di una variabile. Senza return vuol dire che viene eseguita senza restituire nessun valore.
+I parametri sono le variabili che ci permettono di passare alla funzione i dati di cui necessita e si inseriscono nelle parentesi tonde dopo il nome della funzione.
+Gli argomenti sono i valori che si inseriscono al posto dei parametri quando la funzione viene chiamata.
+ESEMPIO (definizione: funzione(par1, par2) / richiamo della funzione: funzione(1, 3))
+
+
+
+Risposta 11: SQL è un linguaggio usato per gestire database relazionali, cioè permette di definire e interrogare dati organizzati in tabelle (righe e colonne).
+
+
+Risposta 13: Un operatore è un indicatore di esecuzione di un'operazione su uno o più valori.
+Gli operatori aritmetici consentono di eseguire dei calcoli matematici su dei numeri e restituisce il risultato numerico: + (somma), - (differenza), * (moltiplicazione), / (divisione), ** (potenza), % (modulo)
+Gli operatori logici sono quelli che consentono di valutare la verità di alcune condizioni anche combinate tra loro e restituisce un booleano: and (restituisce True solo quando entrambe le condizioni date al sistema sono vere), or (restituisce True ogni volta che almeno una delle due condizioni è vera), not (restituisce True se la condizione dopo il not è falsa e False quando la condizione è vera).
+
+
+Risposta 15: Il controllo del flusso è la gestione dell'esecuzione di pezzi di codice in base al verificarsi di alcune condizioni. I controlli di gestione del flusso di dividono in condizioni e cicli.
+Condizioni:
+- if/elif/else -> if permette di eseguire un pezzo di codice solo se la condizione inserita dopo l'if è verificata. elif e else sono comandi opzionali. Gli elif consentono di controllare il verificarsi di altre condizioni nel caso in cui quella inserita nell'if non sia verificata. L'else esegue un pezzo di codice solo se tutte le condizioni indicate nell'if e negli eventuali elif non sono verificate. Ci può essere un unico else ma non è obbligatorio. Gli elif possono essere infiniti ma sono comunque opzionali.
+
+- match/case/case _ -> consente di confrontare una stringa con dei pattern eseguendo un blocco di codice quando si trova di fronte a una corrispondenza. In particolare dopo il match si inserisce la variabile che va confrontata, ad ogni case corrisponde uno specifico pattern, mentre case _ è il caso di default che viene eseguito quando la variabile non corrisponde a nessun pattern. Possono esserci infiniti case, il case default non è obbligatorio ma può anche esserci solo quello di default senza altri case.
+
+Cicli:
+- for -> serve per eseguire un blocco di codice tante volte. In particolare si usa quando si sa a priori il numero di volte che si vuole eseguire il codice. Esiste il for che scorre una lista o quello numerico.
+- while -> è ancora un ciclo, ma si usa quando non si sa quante volte si vuole eseguire un codice. In particolare il codice viene eseguito tante volte finché la condizione inserita dopo il while non diventa falsa. Nel while devono esserci la condizione da verificare per decidere se eseguire ancora il codice e una logica di rottura che è un'operazione che guida il codice verso il raggiungimento della conclusione del ciclo. Esistono due tipi di while: quello numerico e quello booleano.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
