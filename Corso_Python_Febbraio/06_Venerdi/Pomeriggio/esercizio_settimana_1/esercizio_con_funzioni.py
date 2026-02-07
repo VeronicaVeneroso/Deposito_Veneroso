@@ -69,10 +69,10 @@ def stampa_dati_lista(lista, eta):
     numero_utenti = len(lista)
     if numero_utenti > 0:
         print("Ci sono ", numero_utenti, "utenti. La lista completa è:")
-
+        # stampa la lista numerata
         for i in range(numero_utenti):
             print(i+1,  lista[i])
-
+        # Stampa di tutti i valori di età disponibili e dell'età media
         insieme_eta = set(eta)
         print("Le età degli utenti sono: ", insieme_eta)
         eta_media = media(eta)
