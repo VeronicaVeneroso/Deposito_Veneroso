@@ -18,7 +18,7 @@ class Biblioteca:
     def crea_libro(self, titolo, autore, pagine):
         return Libro(titolo, autore, pagine)
     
-    def stampa_libro(self, libro):
+    def stampa_libro(self, libro:Libro):
         libro.descrizione()
 
 
@@ -27,7 +27,7 @@ risposta = "si"
 # Ciclo di creazione e stampa di nuovi libri utilizzando i metodi della
 # classe Biblioteca.
 while risposta == "si":
-    risposta = input("Vuoi aggiungere un libro? (si/no) ")
+    risposta = input("Vuoi aggiungere un libro? (si/no) ").lower()
     match risposta:
         case "si":
             pass
