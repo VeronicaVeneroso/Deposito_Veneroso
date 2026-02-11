@@ -18,16 +18,22 @@
 
 import random
 
+# classe padre MembroSquadra.
+# attributi: nome e età
+# metodi: descrivi (descrive gli attributi del singolo membro)
 class MembroSquadra:
     def __init__(self, nome:str, età:int):
         self.nome = nome
         self.età = età
 
-    # stampa una descrizione generale del membro della squadra
     def descrivi(self):
         return f"{self.nome} ha {self.età} anni"
 
 
+# classe Giocatore.
+# attributi: nome, età, ruolo e numero di maglia
+# metodi: descrivi (dà una descrizione generale di tutti gli attributi del giovatore),
+# gioca partita (attribuisce un'azione random al giocatore tra le azioni disponibili)
 class Giocatore(MembroSquadra):
     def __init__(self, nome:str, età:int, ruolo:str, numero_maglia:int):
         super().__init__(nome, età)
@@ -48,7 +54,10 @@ class Giocatore(MembroSquadra):
         azione = random.choice(possibili_azioni)
         return f"{self.nome} {azione}"
 
-
+# classe Allenatore.
+# attributi: nome, età, anni di esperienza, punto di forza
+# metodi: descrivi (dà una descrizione generale di tutti gli attributi dell'allenatore),
+# dirige allentamento (descrive su quali punti di forza si basa il tipo di allenamento dell'allenatore),
 class Allenatore(MembroSquadra):
     def __init__(self, nome:str, età:int, anni_di_esperienza:int, punto_di_forza:str):
         super().__init__(nome, età)
@@ -61,6 +70,10 @@ class Allenatore(MembroSquadra):
     def dirige_allenamento(self):
         return f"dirige un allenamento intenso basato su {self.punto_di_forza}"
 
+# classe Assistente.
+# attributi: nome, età, specializzazione
+# metodi: descrivi (dà una descrizione generale degli attributi dell'assistente),
+# supporta_team (dichiara qual è il tipo di specializzazione dell'assistente e in che modo supporta la squadra)
 class Assistente(MembroSquadra):
     def __init__(self, nome:str, età:int, specializzazione:str):
         super().__init__(nome, età)
@@ -72,7 +85,13 @@ class Assistente(MembroSquadra):
     def supporta_team(self):
         return f"{self.nome} supporta la squadra come {self.specializzazione}"
 
-
+# classe Squadra
+# attributi: nome, membri della squadra, goal fatti
+# metodi: aggiungi_membro (permette di aggiungere membri alla squadra),
+# descrivi_squadra (stampa le descrizioni di tutti i membri della squadra)
+# gioca_partita(stampa un'azione effettuata da ogni giocatore della squadra e incrementa il numero di goal
+# se l'azione effettuata è un goal),
+# mostra_risultato (restituisce il numero di goal effettuati dalla squadra)
 class Squadra:
     def __init__(self, nome:str):
         self.nome = nome
@@ -101,6 +120,7 @@ class Squadra:
     
 
 risposta = "si"
+# Ciclo ripetibile per giocare quante partite vuole l'utente
 while risposta == "si":
     risposta = input("Vuoi giocare una partita? (si/no) ").lower()
     if risposta == "si":
@@ -111,11 +131,14 @@ while risposta == "si":
         print("Risposta non valida.")
         risposta = "si"
         continue
+
+    # scelta dei nomi delle squadre
     nome1 = input("\nScegli il nome della squadra 1: ")
     squadra1 = Squadra(nome1)
     nome2 = input("\nScegli il nome della squadra 2: ")
     squadra2 = Squadra(nome2)
 
+    # creazione prima squadra
     print("\nCrea la prima squadra. Inserisci 2 giocatori.")
     for i in range(2):
         nome = input("\nInserisci il nome del nuovo giocatore: ")
@@ -135,6 +158,7 @@ while risposta == "si":
     specializzazione = input("Qual è la sua specializzazione? ")
     squadra1.aggiungi_membro(Assistente(nome, età, specializzazione))
 
+    # creazione seconda squadra
     print("\nCrea la seconda squadra. Inserisci 2 giocatori.")
     for i in range(2):
         nome = input("\nInserisci il nome del nuovo giocatore: ")
@@ -154,12 +178,15 @@ while risposta == "si":
     specializzazione = input("Qual è la sua specializzazione? ")
     squadra2.aggiungi_membro(Assistente(nome, età, specializzazione))
 
+    # inizio partita: entrambe le squadre fanno il loro gioco
     print("\nIniziamo la partita\n")
     squadra1.gioca_partita()
     squadra2.gioca_partita()
 
+    # stampa risultato finale
     print(f"\nRISULTATO FINALE: {squadra1.nome} {squadra1.mostra_risultato()} - {squadra2.mostra_risultato()} {squadra2.nome}")
 
+    # dichiara l'eventuale vincitore o la parità in base al numero di goal effettuati dalle due squadre
     if squadra1.goal > squadra2.goal:
         print(f"\nVince {squadra1.nome}!")
     elif squadra2.goal > squadra1.goal:
