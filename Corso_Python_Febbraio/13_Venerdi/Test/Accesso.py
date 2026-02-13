@@ -49,6 +49,3 @@ class Accessi:
     
     def mostra_registro(self):
         print(self.registro)
-    
-
-

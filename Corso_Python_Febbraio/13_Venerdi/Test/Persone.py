@@ -1,5 +1,8 @@
+# ereditarietà e polimorfismo
+
 from abc import ABC, abstractmethod
 
+# classe astratta
 class Persona:
     def __init__(self, nome:str, cognome:str, codice_id:str):
         if not nome or not cognome or not codice_id:
@@ -11,7 +14,7 @@ class Persona:
     @abstractmethod
     def descrivi(self):
         return self.nome, self.cognome, "codice_id:", self.codice_id
-    
+
 class Dipendente(Persona):
     def __init__(self, nome:str, cognome:str, codice_id:str, turni, badge):
         super().__init__(nome, cognome, codice_id)
