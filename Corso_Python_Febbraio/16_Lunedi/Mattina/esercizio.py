@@ -6,7 +6,7 @@ num1 = int(input("primo numero: "))
 num2 = int(input("secondo numero: "))
 num3 = int(input("terzo numero: "))
 
-if num1 == num2 or num1 == num3 or num2 == num3: print("Ci sono due numeri uguali")
+if num1 == num2 or num1 == num3 or num2 == num3: print("Ci sono dei numeri uguali")
 elif num1 > num2 and num1> num3: print(f"Il numero più grande è {num1}")
 elif num2 > num3: print(f"Il numero più grande è {num2}")
 else: print(f"Il numero più grande è {num3}")
