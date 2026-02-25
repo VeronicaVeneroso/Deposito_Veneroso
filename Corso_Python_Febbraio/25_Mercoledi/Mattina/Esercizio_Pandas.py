@@ -63,15 +63,17 @@ print("Salario medio: ", df['Salario'].mean())
 print("\nMediane:\n", df.median(numeric_only=True).to_string())
 print("\nDeviazioni Standard:\n", df.std(numeric_only=True).to_string())
 
-df[df.duplicated()]
-df.drop_duplicates()
+print("\nLe seguenti righe sono duplicate:\n", df[df.duplicated()])
+new_df = df.drop_duplicates()
+print("\nDataFrame senza duplicati:\n", new_df)
 
-df['Età'].fillna(df['Età'].median(), inplace=True)
-df['Salario'].fillna(df['Salario'].median(), inplace=True)
+new_df['Età'] = new_df['Età'].fillna(df['Età'].median())
+new_df['Salario'] = new_df['Salario'].fillna(df['Salario'].median())
 
-df['Categoria Età'] = df['Età'].apply(categoria_eta)
+print("\nDataFrame con dati vuoti sostituiti:\n", new_df)
 
-print("\nDataset finale:")
-print(df)
+new_df['Categoria Età'] = new_df['Età'].apply(categoria_eta)
 
-df.to_csv("dataset_pulito.csv", index=False)
+print("\nDataset finale:\n", new_df)
+
+new_df.to_csv("dataset_pulito.csv", index=False)
