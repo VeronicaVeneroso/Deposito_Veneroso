@@ -1,0 +1,99 @@
+DOMANDA 2: Quali sono le principali caratteristiche di PIP? E cosa vuol dire l'acronimo PIP?
+
+PIP è l'acronimo di "Pip Installs Packages" o "Preferred Installer Program".
+PIP è un sistema di gestione dei pacchetti di Python.
+Le principali funzionalità sono:
+- Installazione: Permette di installare pacchetti da PyPI (Python Package Index, che è la repository ufficiale di software disponibili per Python) o da altre fonti che supportano il formato di
+distribuzione dei pacchetti di Python.
+- Gestione delle versioni: In fase di installazione di un pacchetto si può specificare quale versione se ne vuole scaricare, se non si specifica viene scaricata direttamente l'ultima versione disponibile. In generale PIP consente anche di gestire il downgrade o l'upgrade tra le versioni anche dopo l'installazione iniziale.
+- Aggiornamento e rimozione: Consente di aggiornare pacchetti già installati alla versione più recente o di rimuoverli completamente dal sistema.
+- Gestione delle dipendenze: Durante l'installazione di un pacchetto, PIP installa automaticamente anche le librerie necessarie al suo funzionamento (dipendenze).
+- Integrazione con ambienti virtuali: PIP funziona perfettamente con venv o virtualenv (ambienti virtuali) permettendo così di isolare l'ambiente di un singolo progetto per gestirne le dipendenze.
+
+DOMANDA 4: Cosa cambia dalla programmazione OOP alla programmazione per l'analisi dei dati?
+
+La programmazione OOP è un paradigma di programmazione basato su classi e oggetti per modellare entità del mondo reale e creare codici modulari, riutilizzabili e manutenibili; si occupa, in sostanza, di gestire la struttura di un codice.
+L'analisi dei dati, invece, non è un diverso paradigma di programmazione, si occupa piuttosto della parte funzionale di un progetto, è orientata alla manipolazione, trasformazione e analisi di dataset per estrarre informazioni.
+
+
+DOMANDA 7: Quali sono i principali obbiettivi/funzionalità di Numpy? Spiegali e fai un esempio.
+
+NumPy è una libreria open-source di Python che supporta il calcolo scientifico.
+Le funzionalità principali di NumPy sono:
+- Creare ndarray, che è una struttura dati multidimensionale. Gli ndarray sono modificabili, ordinati, eterogenei (ma vengono usati generalmente come omogenei), il tipo di dato è "arr" e si definiscono con le parentesi quadre []. Queste strutture sono più efficienti in termini di memoria e prestazioni rispetto alle liste.
+- Permette di integrare codice C/C++ o Fortran per ottimizzare le prestazioni delle operazioni.
+- Operare sugli array mediante funzioni matematiche avanzate (operazioni vettoriali, matriciali, funzioni statistiche, operazioni di algebra lineare, ecc.)
+In particolare i tipi di operazioni supportate da NumPy si dividono in:
+- Operazioni vettoriali: operazioni applicate a un intero array che restituisce l'array modificato dall'operazione.
+
+Esempio:
+import numpy as np
+x = [1,2,3]
+y = 2
+print(np.add(x,y))
+
+Questo codice restituisce come output l'array [3,4,5] perché somma 2 a tutti gli elementi dell'array restituendo l'array incrementato.
+
+- Funzioni universali: funzioni che eseguono operazioni sull'intero array ma che restituiscono un unico valore scalare.
+
+Esempio:
+import numpy as np
+x = [1,3,5]
+print(np.mean(x))
+
+Questo codice restituisce come output lo scalare 3, che è la media di tutti gli elementi dell'array.
+
+In generale le operazioni aritmetiche supportate da NumPy (np.add(), np.multiply(), ecc.) sono quasi sempre vettoriali, le funzioni matematiche (np.sin(), np.log(), ecc.) sono sia vettoriali che universali, mentre le funzioni statistiche (np.mean(), np.median(), ecc.) sono quasi sempre universali.
+
+
+DOMANDA 10: Quali sono le principali funzionalità di Pandas? Spiegale e fai un esempio
+
+Pandas è una libreria di Python che consente di effettuare la manipolazione e l'analisi dei dati. In particolare introduce due strutture dati fondamentali: DataFrame e Series.
+- Il DataFrame è una struttura dati bidimensionale simile a una tabella SQL, cioè composta da righe e colonne. Ogni colonna contiene un tipo di dato specifico.
+- La Series invece è una struttura dati unidimensionale che può essere vista come una singola colonna di un DataFrame (quindi ogni Series ha un unico tipo di dato).
+Le funzionalità di Pandas sono:
+- Manipolazione dei dati: Consente di eseguire operazioni sui dati come filtraggio, raggruppamento, selezione, reshaping, che sono operazioni complesse, con l'utilizzo di comandi molto semplici.
+- Pulizia dei dati: Consente di trattare dati ripetuti o mancanti, o di convertire dati di formati sbagliati nel formato corretto, per creare dataset puliti pronti per l'analisi.
+- Analisi dei dati: Supporta operazioni e funzioni analitiche che consentono di estrarre risultati utili dai dati.
+- Interoperabilità: Si integra bene con librerie di visualizzazione dei dati (come Matplotlib) o di statistica.
+
+Esempio complessivo:
+import pandas as pd
+
+# Creazione dataset:
+data = {
+    "Nome": ["Veronica", "Patrizia", "Michele", "Patrizia"], # Colonna di tipo str
+    "Età": [32, 29, 35, 29] # Colonna di tipo int
+}
+
+# Creazione DataFrame:
+df = pd.DataFrame(data)
+print(df)
+
+# Selezione e stampa solo colonna "Nome"
+print(df["Nome"])
+
+# Rimozione duplicati
+df = df.drop_duplicates()
+
+# Riempie campi vuoti con il valore medio della colonna
+df['Età'].fillna(df['Età'].mean(), inplace=True)
+
+# Filtro per età > 30
+print(df[df["Età"] > 30])
+
+
+DOMANDA 12:Cosa cambia tra un Series / Data Frame e un Array? Perché abbiamo bisogno di queste strutture dati?
+
+Come visto nelle domande precedenti, l'array è una struttura dati multidimensionale che viene utilizzata prevalentemente per il calcolo scientifico, sono ideali per le operazioni matematiche o per l'algebra lineare. In particolare contiene un unico tipo di dato, generalmente numerico e non ha etichette specifiche.
+Il DataFrame e la series, invece sono strutture dati (rispettivamente bidimensionale e unidimensionale) simili a tabelle (o una colonna della tabella per la series). Queste strutture sono più flessibili rispetto all'array perché possono contenere più tipi di dati e sono etichettati. In particolare vengono usate per analizzare i dataset e fare statistiche.
+In sintesi l'array viene usato principalmente da NumPy che si occupa di calcolo numerico, mentre il DataFrame o le Series vengono usati per la manipolazione e l'analisi dei dati.
+
+
+DOMANDA 15: Cos'è la Visualizzazione dei dati a che cosa serve? Quali sono i suoi principali obbiettivi?
+
+La visualizzazione dei dati è il processo di rappresentazione, tramite grafici di vario genere, dei risultati che vengono fuori dall'analisi dei dati. Permette, cioè, di trasformare risultati numerici (anche complessi) in elementi visivi facilmente comprensibili.
+I principali obiettivi della visualizzazione dati sono:
+- Informazione: Aiuta a comprendere meglio i dati fornendo i risultati in modo chiaro per supportare decisioni strategiche.
+- Esplorazione: Viene usata per scoprire pattern o tendenze.
+- Narrazione: Permette di visualizzare uno storico aziendale, oppure di presentare una serie di risultati in modo più immediato e visivo.
